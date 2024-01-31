@@ -9,6 +9,7 @@
 
 import java.util.Scanner;
 import java.util.Random; //imports Random class
+import java.text.DecimalFormat; //imports the Decimal Format Class
 
 class Lab2 {
     public static void main(String[] args) {
@@ -38,11 +39,14 @@ class Lab2 {
             }
             System.out.println(""); //splits the line after 6 values
         }
+
+        DecimalFormat formatter = new DecimalFormat("###,###,###"); //creates the number format
+
         //congrats user
         System.out.println("- - - - - - - - - - - - - - - - -");
         System.out.println("Good luck " + customerName + "!");
         System.out.println("Estimated Jackpot:");
-        System.out.println("$" +prize); //leave it as it is without commas - Mr. John's approval
+        System.out.println("$" + formatter.format(prize));
         System.out.println("- - - - - - - - - - - - - - - - -");
 
     }
