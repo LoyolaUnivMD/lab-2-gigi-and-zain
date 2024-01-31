@@ -12,13 +12,13 @@ import java.util.Random; //imports Random class
 
 class Lab2 {
     public static void main(String[] args) {
-        long prize = 225938745L;
+        long prize = 225938745L; //prize amount
         Scanner input = new Scanner(System.in);
 
         System.out.println("CS 212 - Lab 2");
-        System.out.println("This program generates 10 lottery tickets.");
+        System.out.println("This program generates 10 lottery tickets."); //purpose of program
         
-        System.out.print("What's your name? ");
+        System.out.print("What's your name? "); //asks for name
         String customerName = input.nextLine();
 
 
@@ -38,6 +38,7 @@ class Lab2 {
             }
             System.out.println(""); //splits the line after 6 values
         }
+        //congrats user
         System.out.println("- - - - - - - - - - - - - - - - -");
         System.out.println("Good luck " + customerName + "!");
         System.out.println("Estimated Jackpot:");
