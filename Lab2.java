@@ -20,7 +20,7 @@ class Lab2 {
         System.out.println("This program generates 10 lottery tickets."); //purpose of program
         
         System.out.print("What's your name? "); //asks for name
-        String customerName = input.nextLine();
+        String customerName = input.nextLine().strip();
 
 
         Random rand = new Random(); //number generator
