@@ -1,3 +1,22 @@
 print out description of the program
 ask for the player's name
-...
+store player's name
+create random generator into tickets
+for every 10 lines
+    for every 6 numbers
+        generate a random lottery ticket number
+        if the lottery number is less than 10
+            format the number to have a 0 in front of it
+        else
+            leave the number as it is
+        prints out the lottery ticket number
+    starts from the next line after 6 numbers
+prints dotted line
+tells the user good luck
+prints the estimated jackpot
+prints dotted line
+
+
+
+
+
