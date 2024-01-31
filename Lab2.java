@@ -5,7 +5,7 @@
 // Problem Statement: Generate 10 lottery tickets for the user and tell them the potential winning prize
 // Data In: User's name
 // Data Out: lottery ticket numbers, estimated jackpot, congrats user
-// Credits: Zybook Section 3.3
+// Credits: Zybook Section 3.3, https://stackoverflow.com/questions/12806278/double-decimal-formatting-in-java (Decimal Formatting)
 
 import java.util.Scanner;
 import java.util.Random; //imports Random class
