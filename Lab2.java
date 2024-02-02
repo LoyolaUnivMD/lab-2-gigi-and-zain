@@ -13,7 +13,7 @@ import java.text.DecimalFormat; //imports the Decimal Format Class
 
 class Lab2 {
     public static void main(String[] args) {
-        long prize = 225938745L; //prize amount
+        double prize = 0; //prize amount
         Scanner input = new Scanner(System.in);
 
         System.out.println("CS 212 - Lab 2");
@@ -22,6 +22,16 @@ class Lab2 {
         System.out.print("What's your name? "); //asks for name
         String customerName = input.nextLine().strip();
 
+        System.out.println("How much do you want to play? "); //asks how much they want to spend
+        //1 raised to any power is always 1 - corner case
+        //if they want to buy 10 tickets for $1, all they are getting back is the same dollar (defeats the purpose of gambling)
+        double amount = input.nextFloat();
+        double baseAmount = amount;
+
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(2); //sets the amount to only 2 decimal digits
+
+        System.out.println("Great! "+ customerName + " wants to play $" + df.format(amount)); //tells user how much they added
 
         Random rand = new Random(); //number generator
 
@@ -29,6 +39,9 @@ class Lab2 {
         for (int n=0; n<=9; n++){
             for (int i=0; i<=5; i++) {
                 int lottery = rand.nextInt(100); //creates a random number 0-99
+                if (lottery==3 || lottery==5 || lottery==16 || lottery==58 || lottery==59|| lottery==11){
+                   amount = Math.pow(amount, 1.75);
+                }
                 String lotteryNum;
                 if (lottery < 10) {
                     lotteryNum = "0" + lottery;
@@ -39,13 +52,16 @@ class Lab2 {
             }
             System.out.println(""); //splits the line after 6 values
         }
+        if (amount > baseAmount){
+            prize = amount;
+        }
 
-        DecimalFormat formatter = new DecimalFormat("###,###,###"); //creates the number format
+        DecimalFormat formatter = new DecimalFormat("###,###,###.##"); //creates the number format
 
         //congrats user
         System.out.println("- - - - - - - - - - - - - - - - -");
         System.out.println("Good luck " + customerName + "!");
-        System.out.println("Estimated Jackpot:");
+        System.out.println("Your winnings are:");
         System.out.println("$" + formatter.format(prize));
         System.out.println("- - - - - - - - - - - - - - - - -");
 
