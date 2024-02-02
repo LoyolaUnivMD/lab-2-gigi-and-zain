@@ -52,8 +52,8 @@ class Lab2 {
             }
             System.out.println(""); //splits the line after 6 values
         }
-        if (amount > baseAmount){
-            prize = amount;
+        if (amount > baseAmount){ //no winning numbers = no change in amount = no winnings
+            prize = amount; 
         }
 
         DecimalFormat formatter = new DecimalFormat("###,###,###.##"); //creates the number format
